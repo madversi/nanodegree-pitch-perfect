@@ -20,11 +20,11 @@ class RecordAudioViewController: UIViewController {
     }
 
     // MARK: - Button actions
-    @IBAction func startRecording(_ sender: Any) {
+    @IBAction func didTapRecordButton(_ sender: Any) {
         setUpButtons(isRecording: true)
     }
 
-    @IBAction func stopRecording(_ sender: Any) {
+    @IBAction func didTapStopRecordingButton(_ sender: Any) {
         setUpButtons(isRecording: false)
         performSegue(withIdentifier: "fromRecordAudioToPlayAudio", sender: nil)
     }
