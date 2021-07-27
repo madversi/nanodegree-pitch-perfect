@@ -2,28 +2,42 @@
 //  PlayAudioViewController.swift
 //  pitch-perfect
 //
-//  Created by Helder Marcelo Adversi Junio on 24/07/21.
+//  Created by Helder M Adversi Jr on 24/07/21.
 //
 
+import AVFoundation
 import UIKit
 
 class PlayAudioViewController: UIViewController {
+    // MARK: - Outlets
+    @IBOutlet weak var snailButton: UIButton!
+    @IBOutlet weak var rabbitButton: UIButton!
+    @IBOutlet weak var chipmunkButton: UIButton!
+    @IBOutlet weak var vaderButton: UIButton!
+    @IBOutlet weak var echoButton: UIButton!
+    @IBOutlet weak var reverbButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var recordedAudioURL: URL!
+    var audioFile: AVAudioFile!
+    var audioEngine: AVAudioEngine!
+    var audioPlayerNode: AVAudioPlayerNode!
+    var stopTimer: Timer!
 
-        // Do any additional setup after loading the view.
+    enum ButtonType: Int {
+        case slow = 0,
+             fast,
+             chipmunk,
+             vader,
+             echo,
+             reverb
     }
-    
 
-    /*
-    // MARK: - Navigation
+    @IBAction func playSoundFor(button: UIButton) {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
+    @IBAction func didTapStopButton(_ sender: AnyObject) {
+        
+    }
 }

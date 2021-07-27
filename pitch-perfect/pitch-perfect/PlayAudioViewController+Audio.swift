@@ -99,7 +99,7 @@ extension PlayAudioViewController: AVAudioPlayerDelegate {
             }
 
             // schedule a stop timer for when audio finishes playing
-            self.stopTimer = Timer(timeInterval: delayInSeconds, target: self, selector: #selector(PlaySoundsViewController.stopAudio), userInfo: nil, repeats: false)
+            self.stopTimer = Timer(timeInterval: delayInSeconds, target: self, selector: #selector(PlayAudioViewController.stopAudio), userInfo: nil, repeats: false)
             RunLoop.main.add(self.stopTimer!, forMode: RunLoop.Mode.default)
         }
 
@@ -143,7 +143,7 @@ extension PlayAudioViewController: AVAudioPlayerDelegate {
     // MARK: UI Functions
 
     func configureUI(_ playState: PlayingState) {
-        switch(playState) {
+        switch playState {
         case .playing:
             setPlayButtonsEnabled(false)
             stopButton.isEnabled = true
